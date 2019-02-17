@@ -11,8 +11,6 @@ Run #9 completed in: 684 ms
 Run #10 completed in: 691 ms
 Test 'Log4Net_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 6960 ms
 
------------------------------
-
 Test 'NLog_SingleThread_RollingFile' STARTED. Number of runs: '10', logs per run: '50000'
 Run #1 completed in: 1216 ms
 Run #2 completed in: 1158 ms
@@ -25,55 +23,3 @@ Run #8 completed in: 1171 ms
 Run #9 completed in: 1137 ms
 Run #10 completed in: 1144 ms
 Test 'NLog_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 11604 ms
-
-Test 'NLog_SingleThread_RollingFile_DisabledConcurrentWrites' STARTED. Number of runs: '10', logs per run: '50000'
-Run #1 completed in: 656 ms
-Run #2 completed in: 588 ms
-Run #3 completed in: 584 ms
-Run #4 completed in: 592 ms
-Run #5 completed in: 591 ms
-Run #6 completed in: 580 ms
-Run #7 completed in: 594 ms
-Run #8 completed in: 585 ms
-Run #9 completed in: 603 ms
-Run #10 completed in: 589 ms
-Test 'NLog_SingleThread_RollingFile_DisabledConcurrentWrites' FINISHED. Total logs written: '500000', total elapsed: 5962 ms
-
-Test 'NLog_SingleThread_RollingFile_DisabledConcurrentWrites_DisabledAutoFlush' STARTED. Number of runs: '10', logs per run: '50000'
-Run #1 completed in: 285 ms
-Run #2 completed in: 239 ms
-Run #3 completed in: 257 ms
-Run #4 completed in: 262 ms
-Run #5 completed in: 216 ms
-Run #6 completed in: 213 ms
-Run #7 completed in: 221 ms
-Run #8 completed in: 212 ms
-Run #9 completed in: 212 ms
-Run #10 completed in: 213 ms
-Test 'NLog_SingleThread_RollingFile_DisabledConcurrentWrites_DisabledAutoFlush' FINISHED. Total logs written: '500000', total elapsed: 2330 ms
-
-Test 'NLog_SingleThread_RollingFile_DisabledAutoFlush' STARTED. Number of runs: '10', logs per run: '50000'
-Run #1 completed in: 1208 ms
-Run #2 completed in: 1119 ms
-Run #3 completed in: 1104 ms
-Run #4 completed in: 1116 ms
-Run #5 completed in: 1136 ms
-Run #6 completed in: 1132 ms
-Run #7 completed in: 1116 ms
-Run #8 completed in: 1145 ms
-Run #9 completed in: 1111 ms
-Run #10 completed in: 1116 ms
-Test 'NLog_SingleThread_RollingFile_DisabledAutoFlush' FINISHED. Total logs written: '500000', total elapsed: 11303 ms
-
-Test 'NLog_SingleThread_RollingFile_DisabledAutoFlush_UsedAsyncWrapper' STARTED. Number of runs: '10', logs per run: '50000'
-Run #1 completed in: 284 ms
-Run #2 completed in: 224 ms
-Run #3 completed in: 209 ms
-Run #4 completed in: 220 ms
-Run #5 completed in: 212 ms
-Run #6 completed in: 231 ms
-Run #7 completed in: 211 ms
-Run #8 completed in: 209 ms
-Run #9 completed in: 218 ms
-Run #10 completed in: 214 ms
-Test 'NLog_SingleThread_RollingFile_DisabledAutoFlush_UsedAsyncWrapper' FINISHED. Total logs written: '500000', total elapsed: 2232 ms
