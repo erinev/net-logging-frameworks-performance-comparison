@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Log4net:
+
+Test 'Log4Net_SingleThread_SimpleFile' STARTED. Number of runs: '10', logs per run: '50000'
+Run #1 completed in: 560 ms
+Run #2 completed in: 524 ms
+Run #3 completed in: 528 ms
+Run #4 completed in: 522 ms
+Run #5 completed in: 524 ms
+Run #6 completed in: 523 ms
+Run #7 completed in: 545 ms
+Run #8 completed in: 523 ms
+Run #9 completed in: 531 ms
+Run #10 completed in: 524 ms
+Test 'Log4Net_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 5304 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+NLog:
+
+Test 'NLog_SingleThread_SimpleFile' STARTED. Number of runs: '10', logs per run: '50000'
+Run #1 completed in: 601 ms
+Run #2 completed in: 496 ms
+Run #3 completed in: 493 ms
+Run #4 completed in: 499 ms
+Run #5 completed in: 501 ms
+Run #6 completed in: 506 ms
+Run #7 completed in: 494 ms
+Run #8 completed in: 502 ms
+Run #9 completed in: 500 ms
+Run #10 completed in: 504 ms
+Test 'NLog_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 5096 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------

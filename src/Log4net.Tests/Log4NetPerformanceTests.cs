@@ -17,7 +17,17 @@ namespace Log4net.Tests
         }
 
         [Test]
-        public void Log4Net_SingleThread_Test()
+        public void Log4Net_SingleThread_SimpleFileLog_Test()
+        {
+            SingleThreadTestsCaseRunner.Run(
+                LoggingLib.Log4Net,
+                Shared.LogFileType.SimpleFile,
+                (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
+        }
+
+        [Ignore("SimpleFileNow")]
+        [Test]
+        public void Log4Net_SingleThread_RollingFileLog_Test()
         {
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.Log4Net,
