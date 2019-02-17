@@ -8,19 +8,24 @@ namespace NLog.Tests
     {
         private static readonly Logger Logger = LogManager.GetLogger("PerformanceTests");
 
+        [Explicit]
         [Test]
         public void NLog_SingleThread_SimpleFileLog_Test()
         {
+            NLogLogger.ConfigureSimpleFileLogger();
+
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.NLog,  
                 LogFileType.SimpleFile,
                 (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
         }
 
-        [Ignore("OtherNeedsToBeRunned")]
+        [Explicit]
         [Test]
         public void NLog_SingleThread_RollingSizeFileLog_Test()
         {
+            NLogLogger.ConfigureRollingSizeFileLogger();
+
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.NLog,  
                 LogFileType.RollingSizeFile,
