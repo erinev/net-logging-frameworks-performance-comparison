@@ -1,0 +1,28 @@
+Test 'Log4net_SingleThread_RollingLogFile' STARTED. Number of runs: '10', logs per run: '50000'
+Run #0 completed in: 690 ms
+Run #1 completed in: 679 ms
+Run #2 completed in: 675 ms
+Run #3 completed in: 676 ms
+Run #4 completed in: 683 ms
+Run #5 completed in: 682 ms
+Run #6 completed in: 682 ms
+Run #7 completed in: 683 ms
+Run #8 completed in: 676 ms
+Run #9 completed in: 682 ms
+Test 'Log4net_SingleThread_RollingLogFile' FINISHED. Total logs written: '500000', total elapsed: 6808 ms
+
+Test 'NLog_SingleThread_RollingLogFile' STARTED. Number of runs: '10', logs per run: '50000'
+Run #0 completed in: 1164 ms
+Run #1 completed in: 1107 ms
+Run #2 completed in: 1104 ms
+Run #3 completed in: 1104 ms
+Run #4 completed in: 1098 ms
+Run #5 completed in: 1100 ms
+Run #6 completed in: 1104 ms
+Run #7 completed in: 1103 ms
+Run #8 completed in: 1099 ms
+Run #9 completed in: 1100 ms
+Test 'NLog_SingleThread_RollingLogFile' FINISHED. Total logs written: '500000', total elapsed: 11083 ms
+
+----------------------------
+
