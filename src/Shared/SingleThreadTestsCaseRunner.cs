@@ -5,7 +5,7 @@ namespace Shared
 {
     public class SingleThreadTestsCaseRunner
     {
-        public static void Run(LoggingLib lib, LogFileType logFileType, Action<int, int> logAction, int numberOfRuns = 1, int logsCountPerRun = 1)
+        public static void Run(LoggingLib lib, LogFileType logFileType, Action<int, int> logAction, int numberOfRuns = 10, int logsCountPerRun = 50000)
         {
             string testCaseName = $"{lib}_SingleThread_{logFileType}";
 
@@ -15,11 +15,11 @@ namespace Shared
 
             long totalElapsedMs = 0;
 
-            for (int i = 0; i < numberOfRuns; i++)
+            for (int i = 1; i <= numberOfRuns; i++)
             {
                 stopWatch.Restart();
 
-                for (int j = 0; j < logsCountPerRun; j++)
+                for (int j = 1; j <= logsCountPerRun; j++)
                 {
                     logAction(i, j);
                 }

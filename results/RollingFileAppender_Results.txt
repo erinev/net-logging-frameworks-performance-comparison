@@ -1,28 +1,25 @@
 Test 'Log4Net_SingleThread_RollingFile' STARTED. Number of runs: '10', logs per run: '50000'
-Run #0 completed in: 736 ms
-Run #1 completed in: 724 ms
-Run #2 completed in: 711 ms
-Run #3 completed in: 723 ms
-Run #4 completed in: 704 ms
-Run #5 completed in: 699 ms
-Run #6 completed in: 720 ms
-Run #7 completed in: 716 ms
-Run #8 completed in: 716 ms
-Run #9 completed in: 712 ms
-Test 'Log4Net_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 7161 ms
+Run #1 completed in: 716 ms
+Run #2 completed in: 724 ms
+Run #3 completed in: 687 ms
+Run #4 completed in: 706 ms
+Run #5 completed in: 689 ms
+Run #6 completed in: 697 ms
+Run #7 completed in: 682 ms
+Run #8 completed in: 684 ms
+Run #9 completed in: 684 ms
+Run #10 completed in: 691 ms
+Test 'Log4Net_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 6960 ms
 
 Test 'NLog_SingleThread_RollingFile' STARTED. Number of runs: '10', logs per run: '50000'
-Run #0 completed in: 1199 ms
-Run #1 completed in: 1130 ms
-Run #2 completed in: 1132 ms
-Run #3 completed in: 1157 ms
-Run #4 completed in: 1123 ms
-Run #5 completed in: 1117 ms
-Run #6 completed in: 1113 ms
-Run #7 completed in: 1116 ms
-Run #8 completed in: 1127 ms
-Run #9 completed in: 1124 ms
-Test 'NLog_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 11338 ms
-
-----------------------------
-
+Run #1 completed in: 1216 ms
+Run #2 completed in: 1158 ms
+Run #3 completed in: 1132 ms
+Run #4 completed in: 1141 ms
+Run #5 completed in: 1135 ms
+Run #6 completed in: 1192 ms
+Run #7 completed in: 1178 ms
+Run #8 completed in: 1171 ms
+Run #9 completed in: 1137 ms
+Run #10 completed in: 1144 ms
+Test 'NLog_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 11604 ms
