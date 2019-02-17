@@ -1,3 +1,6 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Log4net:
+
 Test 'Log4Net_SingleThread_RollingFile' STARTED. Number of runs: '10', logs per run: '50000'
 Run #1 completed in: 716 ms
 Run #2 completed in: 724 ms
@@ -11,6 +14,7 @@ Run #9 completed in: 684 ms
 Run #10 completed in: 691 ms
 Test 'Log4Net_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 6960 ms
 
+// source: http://www.nimaara.com/2016/01/01/high-performance-logging-log4net/
 Test 'Log4Net_SingleThread_RollingFile_UseEasyLoggerAsyncBufferingForwardingAppender' STARTED. Number of runs: '10', logs per run: '50000'
 Run #1 completed in: 136 ms
 Run #2 completed in: 99 ms
@@ -24,7 +28,8 @@ Run #9 completed in: 88 ms
 Run #10 completed in: 101 ms
 Test 'Log4Net_SingleThread_RollingFile_UseEasyLoggerAsyncBufferingForwardingAppender' FINISHED. Total logs written: '500000', total elapsed: 1011 ms
 
------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+NLog:
 
 Test 'NLog_SingleThread_RollingFile' STARTED. Number of runs: '10', logs per run: '50000'
 Run #1 completed in: 1216 ms
@@ -78,6 +83,7 @@ Run #9 completed in: 1111 ms
 Run #10 completed in: 1116 ms
 Test 'NLog_SingleThread_RollingFile_DisabledAutoFlush' FINISHED. Total logs written: '500000', total elapsed: 11303 ms
 
+// source: https://github.com/NLog/NLog/wiki/Performance
 Test 'NLog_SingleThread_RollingFile_DisabledAutoFlush_UsedAsyncWrapper' STARTED. Number of runs: '10', logs per run: '50000'
 Run #1 completed in: 284 ms
 Run #2 completed in: 224 ms
@@ -90,3 +96,5 @@ Run #8 completed in: 209 ms
 Run #9 completed in: 218 ms
 Run #10 completed in: 214 ms
 Test 'NLog_SingleThread_RollingFile_DisabledAutoFlush_UsedAsyncWrapper' FINISHED. Total logs written: '500000', total elapsed: 2232 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
