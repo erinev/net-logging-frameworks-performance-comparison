@@ -11,6 +11,19 @@ Run #9 completed in: 684 ms
 Run #10 completed in: 691 ms
 Test 'Log4Net_SingleThread_RollingFile' FINISHED. Total logs written: '500000', total elapsed: 6960 ms
 
+Test 'Log4Net_SingleThread_RollingFile_UseEasyLoggerAsyncBufferingForwardingAppender' STARTED. Number of runs: '10', logs per run: '50000'
+Run #1 completed in: 136 ms
+Run #2 completed in: 99 ms
+Run #3 completed in: 100 ms
+Run #4 completed in: 89 ms
+Run #5 completed in: 108 ms
+Run #6 completed in: 84 ms
+Run #7 completed in: 88 ms
+Run #8 completed in: 118 ms
+Run #9 completed in: 88 ms
+Run #10 completed in: 101 ms
+Test 'Log4Net_SingleThread_RollingFile_UseEasyLoggerAsyncBufferingForwardingAppender' FINISHED. Total logs written: '500000', total elapsed: 1011 ms
+
 -----------------------------
 
 Test 'NLog_SingleThread_RollingFile' STARTED. Number of runs: '10', logs per run: '50000'
