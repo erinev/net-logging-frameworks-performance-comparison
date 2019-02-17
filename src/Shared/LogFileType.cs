@@ -9,6 +9,6 @@ namespace Shared
     public enum LogFileType
     {
         SimpleFile,
-        RollingFile
+        RollingSizeFile
     }
 }

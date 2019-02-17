@@ -16,6 +16,7 @@ namespace Log4net.Tests
             XmlConfigurator.Configure();
         }
 
+        
         [Test]
         public void Log4Net_SingleThread_SimpleFileLog_Test()
         {
@@ -25,13 +26,13 @@ namespace Log4net.Tests
                 (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
         }
 
-        [Ignore("SimpleFileNow")]
+        [Ignore("OtherNeedsToBeRunned")]
         [Test]
-        public void Log4Net_SingleThread_RollingFileLog_Test()
+        public void Log4Net_SingleThread_RollingSizeFileLog_Test()
         {
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.Log4Net,
-                Shared.LogFileType.RollingFile,
+                Shared.LogFileType.RollingSizeFile,
                 (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
         }
     }

@@ -17,13 +17,13 @@ namespace NLog.Tests
                 (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
         }
 
-        [Ignore("SimpleFileNow")]
+        [Ignore("OtherNeedsToBeRunned")]
         [Test]
-        public void NLog_SingleThread_RollingFileLog_Test()
+        public void NLog_SingleThread_RollingSizeFileLog_Test()
         {
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.NLog,  
-                LogFileType.RollingFile,
+                LogFileType.RollingSizeFile,
                 (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
         }
     }

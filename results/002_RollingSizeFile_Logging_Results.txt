@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Log4net:
+
+1st - no optimizations (getting started config):
+    Test 'Log4Net_SingleThread_RollingSizeFile' STARTED. Number of runs: '10', logs per run: '50000'
+    Run #1 completed in: 674 ms
+    Run #2 completed in: 674 ms
+    Run #3 completed in: 655 ms
+    Run #4 completed in: 645 ms
+    Run #5 completed in: 653 ms
+    Run #6 completed in: 657 ms
+    Run #7 completed in: 662 ms
+    Run #8 completed in: 672 ms
+    Run #9 completed in: 649 ms
+    Run #10 completed in: 657 ms
+    Test 'Log4Net_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 6598 ms
+
+2nd - :
+    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+NLog:
+
+1st - no optimizations (getting started config):
+    Test 'NLog_SingleThread_RollingSizeFile' STARTED. Number of runs: '10', logs per run: '50000'
+    Run #1 completed in: 1165 ms
+    Run #2 completed in: 1112 ms
+    Run #3 completed in: 1083 ms
+    Run #4 completed in: 1093 ms
+    Run #5 completed in: 1083 ms
+    Run #6 completed in: 1091 ms
+    Run #7 completed in: 1086 ms
+    Run #8 completed in: 1085 ms
+    Run #9 completed in: 1083 ms
+    Run #10 completed in: 1100 ms
+    Test 'NLog_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 10981 ms
+
+2nd - :
+    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
