@@ -3,17 +3,17 @@ Log4net:
 
 1st - no optimizations (getting started config):
     Test 'Log4Net_SingleThread_RollingSizeFile' STARTED. Number of runs: '10', logs per run: '50000'
-    Run #1 completed in: 674 ms
-    Run #2 completed in: 674 ms
-    Run #3 completed in: 655 ms
-    Run #4 completed in: 645 ms
-    Run #5 completed in: 653 ms
-    Run #6 completed in: 657 ms
-    Run #7 completed in: 662 ms
-    Run #8 completed in: 672 ms
-    Run #9 completed in: 649 ms
-    Run #10 completed in: 657 ms
-    Test 'Log4Net_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 6598 ms
+    Run #1 completed in: 706 ms
+    Run #2 completed in: 665 ms
+    Run #3 completed in: 664 ms
+    Run #4 completed in: 689 ms
+    Run #5 completed in: 674 ms
+    Run #6 completed in: 659 ms
+    Run #7 completed in: 675 ms
+    Run #8 completed in: 673 ms
+    Run #9 completed in: 704 ms
+    Run #10 completed in: 671 ms
+    Test 'Log4Net_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 6780 ms
 
 2nd - :
     
@@ -23,17 +23,17 @@ NLog:
 
 1st - no optimizations (getting started config):
     Test 'NLog_SingleThread_RollingSizeFile' STARTED. Number of runs: '10', logs per run: '50000'
-    Run #1 completed in: 1165 ms
-    Run #2 completed in: 1112 ms
-    Run #3 completed in: 1083 ms
-    Run #4 completed in: 1093 ms
-    Run #5 completed in: 1083 ms
-    Run #6 completed in: 1091 ms
-    Run #7 completed in: 1086 ms
-    Run #8 completed in: 1085 ms
-    Run #9 completed in: 1083 ms
-    Run #10 completed in: 1100 ms
-    Test 'NLog_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 10981 ms
+    Run #1 completed in: 1156 ms
+    Run #2 completed in: 1088 ms
+    Run #3 completed in: 1095 ms
+    Run #4 completed in: 1108 ms
+    Run #5 completed in: 1088 ms
+    Run #6 completed in: 1104 ms
+    Run #7 completed in: 1148 ms
+    Run #8 completed in: 1115 ms
+    Run #9 completed in: 1104 ms
+    Run #10 completed in: 1099 ms
+    Test 'NLog_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 11105 ms
 
 2nd - :
     
@@ -43,17 +43,18 @@ Serilog:
 
 1st - no optimizations (getting started config):
     Test 'Serilog_SingleThread_RollingSizeFile' STARTED. Number of runs: '10', logs per run: '50000'
-    Run #1 completed in: 841 ms
-    Run #2 completed in: 739 ms
-    Run #3 completed in: 735 ms
-    Run #4 completed in: 792 ms
-    Run #5 completed in: 729 ms
-    Run #6 completed in: 748 ms
-    Run #7 completed in: 754 ms
-    Run #8 completed in: 744 ms
-    Run #9 completed in: 745 ms
-    Run #10 completed in: 752 ms
-    Test 'Serilog_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 7579 ms
+    Run #1 completed in: 818 ms
+    Run #2 completed in: 738 ms
+    Run #3 completed in: 747 ms
+    Run #4 completed in: 737 ms
+    Run #5 completed in: 712 ms
+    Run #6 completed in: 714 ms
+    Run #7 completed in: 747 ms
+    Run #8 completed in: 713 ms
+    Run #9 completed in: 724 ms
+    Run #10 completed in: 731 ms
+    Test 'Serilog_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 7381 ms
+
     
 2nd - :
     

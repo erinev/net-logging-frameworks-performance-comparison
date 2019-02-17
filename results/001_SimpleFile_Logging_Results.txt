@@ -3,17 +3,17 @@ Log4net:
 
 1st - no optimizations (getting started config):
     Test 'Log4Net_SingleThread_SimpleFile' STARTED. Number of runs: '10', logs per run: '50000'
-    Run #1 completed in: 550 ms
-    Run #2 completed in: 532 ms
-    Run #3 completed in: 522 ms
-    Run #4 completed in: 518 ms
-    Run #5 completed in: 529 ms
-    Run #6 completed in: 522 ms
-    Run #7 completed in: 522 ms
-    Run #8 completed in: 531 ms
-    Run #9 completed in: 527 ms
-    Run #10 completed in: 524 ms
-    Test 'Log4Net_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 5277 ms
+    Run #1 completed in: 539 ms
+    Run #2 completed in: 516 ms
+    Run #3 completed in: 516 ms
+    Run #4 completed in: 526 ms
+    Run #5 completed in: 517 ms
+    Run #6 completed in: 521 ms
+    Run #7 completed in: 511 ms
+    Run #8 completed in: 513 ms
+    Run #9 completed in: 533 ms
+    Run #10 completed in: 520 ms
+    Test 'Log4Net_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 5212 ms
 
 2nd - :
 
@@ -23,17 +23,17 @@ NLog:
 
 1st - no optimizations (getting started config):
     Test 'NLog_SingleThread_SimpleFile' STARTED. Number of runs: '10', logs per run: '50000'
-    Run #1 completed in: 601 ms
-    Run #2 completed in: 496 ms
-    Run #3 completed in: 493 ms
-    Run #4 completed in: 499 ms
-    Run #5 completed in: 501 ms
-    Run #6 completed in: 506 ms
-    Run #7 completed in: 494 ms
-    Run #8 completed in: 502 ms
-    Run #9 completed in: 500 ms
-    Run #10 completed in: 504 ms
-    Test 'NLog_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 5096 ms
+    Run #1 completed in: 549 ms
+    Run #2 completed in: 516 ms
+    Run #3 completed in: 513 ms
+    Run #4 completed in: 515 ms
+    Run #5 completed in: 512 ms
+    Run #6 completed in: 532 ms
+    Run #7 completed in: 501 ms
+    Run #8 completed in: 514 ms
+    Run #9 completed in: 501 ms
+    Run #10 completed in: 509 ms
+    Test 'NLog_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 5162 ms
 
 2nd - :
 
@@ -43,17 +43,17 @@ Serilog:
 
 1st - no optimizations (getting started config):
     Test 'Serilog_SingleThread_SimpleFile' STARTED. Number of runs: '10', logs per run: '50000'
-    Run #1 completed in: 720 ms
-    Run #2 completed in: 712 ms
-    Run #3 completed in: 705 ms
-    Run #4 completed in: 675 ms
-    Run #5 completed in: 694 ms
-    Run #6 completed in: 691 ms
-    Run #7 completed in: 672 ms
-    Run #8 completed in: 662 ms
-    Run #9 completed in: 702 ms
-    Run #10 completed in: 739 ms
-    Test 'Serilog_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 6972 ms
+    Run #1 completed in: 833 ms
+    Run #2 completed in: 706 ms
+    Run #3 completed in: 702 ms
+    Run #4 completed in: 695 ms
+    Run #5 completed in: 698 ms
+    Run #6 completed in: 703 ms
+    Run #7 completed in: 717 ms
+    Run #8 completed in: 716 ms
+    Run #9 completed in: 712 ms
+    Run #10 completed in: 713 ms
+    Test 'Serilog_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 7195 ms
     
 2nd - :
     
