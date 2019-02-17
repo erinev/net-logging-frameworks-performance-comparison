@@ -7,15 +7,13 @@ namespace NLog.Tests
     public class NLogPerformanceTests
     {
         private static readonly Logger Logger = LogManager.GetLogger("PerformanceTests");
-        private static readonly string LibName = "NLog";
-        private static readonly string LogFileType = "RollingLogFile"; // LogFile, RollingLogFile
 
         [Test]
-        public void NLogSingleThread()
+        public void NLog_SingleThread_Test()
         {
             SingleThreadTestsCaseRunner.Run(
-                LibName,  
-                LogFileType,
+                LoggingLib.NLog,  
+                LogFileType.RollingFile,
                 (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
         }
     }

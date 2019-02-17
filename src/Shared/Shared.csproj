@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogFileType.cs" />
+    <Compile Include="LoggingLib.cs" />
     <Compile Include="SingleThreadTestsCaseRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

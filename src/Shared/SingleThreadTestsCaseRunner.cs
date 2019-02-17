@@ -5,9 +5,9 @@ namespace Shared
 {
     public class SingleThreadTestsCaseRunner
     {
-        public static void Run(string libName, string logFileType, Action<int, int> logAction, int numberOfRuns = 10, int logsCountPerRun = 50000)
+        public static void Run(LoggingLib lib, LogFileType logFileType, Action<int, int> logAction, int numberOfRuns = 1, int logsCountPerRun = 1)
         {
-            string testCaseName = $"{libName}_SingleThread_{logFileType}";
+            string testCaseName = $"{lib}_SingleThread_{logFileType}";
 
             Console.WriteLine($"Test '{testCaseName}' STARTED. Number of runs: '{numberOfRuns}', logs per run: '{logsCountPerRun}'");
 

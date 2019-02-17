@@ -9,8 +9,6 @@ namespace Log4net.Tests
     public class Log4NetPerformanceTests
     {
         private static readonly ILog Logger = LogManager.GetLogger("PerformanceTests");
-        private static readonly string LibName = "Log4net";
-        private static readonly string LogFileType = "RollingLogFile"; // LogFile, RollingLogFile
 
         [OneTimeSetUp]
         public void OneTimeSetup()
@@ -19,11 +17,11 @@ namespace Log4net.Tests
         }
 
         [Test]
-        public void Log4NetSingleThread()
+        public void Log4Net_SingleThread_Test()
         {
             SingleThreadTestsCaseRunner.Run(
-                LibName,
-                LogFileType,
+                LoggingLib.Log4Net,
+                Shared.LogFileType.RollingFile,
                 (runNr, logNrInRun) => Logger.Info($"Run #{runNr} - Log #{logNrInRun}"));
         }
     }
