@@ -39,3 +39,23 @@ NLog:
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
+Serilog:
+
+1st - no optimizations (getting started config):
+    Test 'Serilog_SingleThread_SimpleFile' STARTED. Number of runs: '10', logs per run: '50000'
+    Run #1 completed in: 720 ms
+    Run #2 completed in: 712 ms
+    Run #3 completed in: 705 ms
+    Run #4 completed in: 675 ms
+    Run #5 completed in: 694 ms
+    Run #6 completed in: 691 ms
+    Run #7 completed in: 672 ms
+    Run #8 completed in: 662 ms
+    Run #9 completed in: 702 ms
+    Run #10 completed in: 739 ms
+    Test 'Serilog_SingleThread_SimpleFile' FINISHED. Total logs written: '500000', total elapsed: 6972 ms
+    
+2nd - :
+    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------

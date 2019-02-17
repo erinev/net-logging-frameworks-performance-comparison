@@ -39,3 +39,23 @@ NLog:
     
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
+Serilog:
+
+1st - no optimizations (getting started config):
+    Test 'Serilog_SingleThread_RollingSizeFile' STARTED. Number of runs: '10', logs per run: '50000'
+    Run #1 completed in: 841 ms
+    Run #2 completed in: 739 ms
+    Run #3 completed in: 735 ms
+    Run #4 completed in: 792 ms
+    Run #5 completed in: 729 ms
+    Run #6 completed in: 748 ms
+    Run #7 completed in: 754 ms
+    Run #8 completed in: 744 ms
+    Run #9 completed in: 745 ms
+    Run #10 completed in: 752 ms
+    Test 'Serilog_SingleThread_RollingSizeFile' FINISHED. Total logs written: '500000', total elapsed: 7579 ms
+    
+2nd - :
+    
+
+-------------------------------------------------------------------------------------------------------------------------------------------------

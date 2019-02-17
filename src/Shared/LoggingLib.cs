@@ -9,6 +9,7 @@ namespace Shared
     public enum LoggingLib
     {
         Log4Net,
-        NLog
+        NLog,
+        Serilog
     }
 }

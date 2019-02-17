@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4net.Tests", "Log4net.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{2F5A3093-994B-4468-96A7-4B550948EEE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Tests", "Serilog.Tests\Serilog.Tests.csproj", "{30C9DBD4-4DBA-4CDA-9061-9C57F91F3F4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2F5A3093-994B-4468-96A7-4B550948EEE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F5A3093-994B-4468-96A7-4B550948EEE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F5A3093-994B-4468-96A7-4B550948EEE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C9DBD4-4DBA-4CDA-9061-9C57F91F3F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C9DBD4-4DBA-4CDA-9061-9C57F91F3F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C9DBD4-4DBA-4CDA-9061-9C57F91F3F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C9DBD4-4DBA-4CDA-9061-9C57F91F3F4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
