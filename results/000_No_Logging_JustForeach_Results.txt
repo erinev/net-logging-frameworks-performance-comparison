@@ -1,0 +1,12 @@
+Test 'None_SingleThread_Foreach' STARTED. Number of runs: '10'
+Run #1 completed in: 0 ms
+Run #2 completed in: 0 ms
+Run #3 completed in: 0 ms
+Run #4 completed in: 0 ms
+Run #5 completed in: 0 ms
+Run #6 completed in: 0 ms
+Run #7 completed in: 0 ms
+Run #8 completed in: 0 ms
+Run #9 completed in: 0 ms
+Run #10 completed in: 0 ms
+Test 'None_SingleThread_Foreach' FINISHED. Total elapsed: 0 ms
