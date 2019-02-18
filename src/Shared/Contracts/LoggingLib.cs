@@ -1,8 +1,8 @@
-﻿namespace Shared
+﻿namespace Shared.Contracts
 {
     public enum LoggingLib
     {
-        None,
+        NoLoggingLib,
         Log4Net,
         NLog,
         Serilog

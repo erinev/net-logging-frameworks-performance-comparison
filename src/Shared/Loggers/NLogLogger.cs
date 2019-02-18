@@ -1,9 +1,9 @@
 ﻿using System.IO;
+using NLog;
 using NLog.Config;
 using NLog.Targets;
-using Shared;
 
-namespace NLog.Tests
+namespace Shared.Loggers
 {
     public class NLogLogger
     {
@@ -22,7 +22,7 @@ namespace NLog.Tests
                 FileName = logFileName,
                 Layout = LogOutputTemplate,
 
-                KeepFileOpen = true, // Improves performance drastically
+                KeepFileOpen = true, // Improves performance drastically (by default is set to false)
             };
             config.AddTarget(simpleLogFileTarget);
 
@@ -44,7 +44,7 @@ namespace NLog.Tests
                 FileName = logFileName,
                 Layout = LogOutputTemplate,
 
-                KeepFileOpen = true, // Improves performance drastically
+                KeepFileOpen = true, // Improves performance drastically (by default is set to false)
 
                 ArchiveAboveSize = Constants.ArchiveAboveBytes,
                 ArchiveNumbering = ArchiveNumberingMode.Rolling,

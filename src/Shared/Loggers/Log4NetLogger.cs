@@ -4,12 +4,13 @@ using log4net.Appender;
 using log4net.Core;
 using log4net.Layout;
 using log4net.Repository.Hierarchy;
-using Shared;
 
-namespace Log4net.Tests
+namespace Shared.Loggers
 {
     public class Log4NetLogger
     {
+        private static readonly Hierarchy Hierarchy = (Hierarchy)LogManager.GetRepository();
+
         private static string LogOutputTemplate = "%date{yyyy'-'MM'-'dd HH':'mm':'ss'.'fff} [%thread] %level %logger - %message%newline";
 
         public static void ConfigureSimpleFileLogger()
@@ -17,8 +18,6 @@ namespace Log4net.Tests
             var logFileName = $"{Constants.RootLogsDirectory}\\Log4Net.SimpleFile.log";
 
             File.Delete(logFileName);
-
-            Hierarchy hierarchy = (Hierarchy)LogManager.GetRepository();
 
             PatternLayout patternLayout = new PatternLayout
             {
@@ -32,11 +31,11 @@ namespace Log4net.Tests
                 Layout = patternLayout
             };
             simpleFileAppender.ActivateOptions();
-            hierarchy.Root.AddAppender(simpleFileAppender);
+            Hierarchy.Root.AddAppender(simpleFileAppender);
 
-            hierarchy.Root.Level = Level.Info;
+            Hierarchy.Root.Level = Level.Info;
 
-            hierarchy.Configured = true;
+            Hierarchy.Configured = true;
         }
 
         public static void ConfigureRollingSizeFileLogger()
@@ -44,8 +43,6 @@ namespace Log4net.Tests
             var logFileName = $"{Constants.RootLogsDirectory}\\Log4Net.RollingSizeFile.log";
 
             File.Delete(logFileName);
-
-            Hierarchy hierarchy = (Hierarchy)LogManager.GetRepository();
 
             PatternLayout patternLayout = new PatternLayout
             {
@@ -59,16 +56,23 @@ namespace Log4net.Tests
                 Layout = patternLayout,
 
                 MaxSizeRollBackups = Constants.MaxArchiveFiles,
-                MaximumFileSize = "50MB",
+                MaximumFileSize = Constants.Log4NetArchiveAboveString,
                 RollingStyle = RollingFileAppender.RollingMode.Size,
                 StaticLogFileName = true
             };
             rollingFileAppender.ActivateOptions();
-            hierarchy.Root.AddAppender(rollingFileAppender);
+            Hierarchy.Root.AddAppender(rollingFileAppender);
 
-            hierarchy.Root.Level = Level.Info;
+            Hierarchy.Root.Level = Level.Info;
 
-            hierarchy.Configured = true;
+            Hierarchy.Configured = true;
+        }
+
+        public static void DisableLogger()
+        {
+            Hierarchy.Root.RemoveAllAppenders();
+
+            Hierarchy.Configured = true;
         }
     }
 }

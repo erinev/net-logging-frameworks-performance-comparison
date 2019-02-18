@@ -1,8 +1,8 @@
-﻿namespace Shared
+﻿namespace Shared.Contracts
 {
     public enum LogFileType
     {
-        Foreach,
+        InMemoryForeach,
         SimpleFile,
         RollingSizeFile
     }

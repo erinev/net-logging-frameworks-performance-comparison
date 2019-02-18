@@ -1,8 +1,8 @@
 ﻿using System.IO;
+using Serilog;
 using Serilog.Core;
-using Constants = Shared.Constants;
 
-namespace Serilog.Tests
+namespace Shared.Loggers
 {
     public class SerilogLogger
     {
