@@ -1,45 +1,48 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
 using Shared.Contracts;
 using Shared.Loggers;
 
 namespace Shared.TestCaseRunners
 {
-    public class SingleThreadTestsCaseRunner
+    public class MultiThreadTestsCaseRunner
     {
-        public static void Run(LoggingLib lib, LogFileType logFileType, Action<int, int> logAction)
+        public static void Run(LoggingLib lib, LogFileType logFileType, Action<long, int> logAction)
         {
-            int numberOfRuns = Parameters.NumberOfRuns;
+            int numberOfRuns = Parameters.NumberOfRuns + 1;
             int logsCountPerRun = Parameters.NumberOfLogsPerRun;
 
-            string testCaseName = $"{lib} -> {ThreadingType.SingleThreaded} -> {logFileType}";
+            string testCaseName = $"{lib} -> {ThreadingType.MultiThreaded} -> {logFileType}";
 
             Console.WriteLine();
             Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine($"'{testCaseName}' case STARTED. Number of runs: '{numberOfRuns}', logs per run: '{logsCountPerRun}'");
+            Console.WriteLine($"'{testCaseName}' case STARTED. Number of runs: '{numberOfRuns - 1}', logs per run: '{logsCountPerRun}'");
 
             var stopWatch = new Stopwatch();
 
             long totalElapsedMs = 0;
 
-            for (int i = 1; i <= numberOfRuns; i++)
-            {
+            Parallel.For((long) 1, numberOfRuns, index => 
+            { 
                 stopWatch.Restart();
 
                 for (int j = 1; j <= logsCountPerRun; j++)
                 {
-                    logAction(i, j);
+                    logAction(index, j);
                 }
 
                 stopWatch.Stop();
 
-                string runNumber = i < 10 ? $"0{i}" : i.ToString();
+                string runNumber = index < 10 ? $"0{index}" : index.ToString();
 
                 Console.WriteLine($"Run #{runNumber} completed in: {stopWatch.ElapsedMilliseconds} ms");
-                totalElapsedMs += stopWatch.ElapsedMilliseconds;
-            }
+                    
+                Interlocked.Add(ref totalElapsedMs, stopWatch.ElapsedMilliseconds);
+            });
 
-            int totalNumberOfLogsWritten = lib == LoggingLib.NoLoggingLib ? 0 : numberOfRuns * logsCountPerRun;
+            int totalNumberOfLogsWritten = lib == LoggingLib.NoLoggingLib ? 0 : (numberOfRuns - 1) * logsCountPerRun;
 
             Console.WriteLine($"'{testCaseName}' case FINISHED. Total logs written: '{totalNumberOfLogsWritten}', total elapsed: {totalElapsedMs} ms");
         }

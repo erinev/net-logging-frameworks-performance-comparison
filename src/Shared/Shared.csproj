@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Loggers\Constants.cs" />
+    <Compile Include="Contracts\ThreadingType.cs" />
+    <Compile Include="Loggers\Parameters.cs" />
     <Compile Include="Contracts\LogFileType.cs" />
     <Compile Include="Loggers\Log4NetLogger.cs" />
     <Compile Include="Loggers\SerilogLogger.cs" />
     <Compile Include="Contracts\LoggingLib.cs" />
     <Compile Include="Loggers\NLogLogger.cs" />
+    <Compile Include="TestCaseRunners\MultiThreadTestsCaseRunner.cs" />
     <Compile Include="TestCaseRunners\SingleThreadTestsCaseRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

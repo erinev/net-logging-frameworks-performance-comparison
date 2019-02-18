@@ -2,16 +2,17 @@
 using NLog;
 using NLog.Config;
 using NLog.Targets;
+using Shared.Contracts;
 
 namespace Shared.Loggers
 {
     public class NLogLogger
     {
-        private static readonly string LogOutputTemplate = "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff} [${threadname}] ${level:uppercase=true} ${logger} - ${message}";
+        private static readonly string LogOutputTemplate = "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff} [${threadid}] ${level:uppercase=true} ${logger} - ${message}";
 
-        public static void ConfigureSimpleFileLogger()
+        public static void ConfigureSimpleFileLogger(ThreadingType threadingType)
         {
-            var logFileName = $"{Constants.RootLogsDirectory}\\NLog.SimpleFile.log";
+            var logFileName = $"{Parameters.RootLogsDirectory}\\NLog.{threadingType}.SimpleFile.log";
 
             File.Delete(logFileName);
 
@@ -31,9 +32,9 @@ namespace Shared.Loggers
             LogManager.Configuration = config;
         }
 
-        public static void ConfigureRollingSizeFileLogger()
+        public static void ConfigureRollingSizeFileLogger(ThreadingType threadingType)
         {
-            var logFileName = $"{Constants.RootLogsDirectory}\\NLog.RollingSizeFile.log";
+            var logFileName = $"{Parameters.RootLogsDirectory}\\NLog.{threadingType}.RollingSizeFile.log";
 
             File.Delete(logFileName);
 
@@ -46,9 +47,9 @@ namespace Shared.Loggers
 
                 KeepFileOpen = true, // Improves performance drastically (by default is set to false)
 
-                ArchiveAboveSize = Constants.ArchiveAboveBytes,
+                ArchiveAboveSize = Parameters.ArchiveAboveBytes,
                 ArchiveNumbering = ArchiveNumberingMode.Rolling,
-                MaxArchiveFiles = Constants.MaxArchiveFiles
+                MaxArchiveFiles = Parameters.MaxArchiveFiles
             };
             config.AddTarget(rollingSizeLogFileTarget);
 

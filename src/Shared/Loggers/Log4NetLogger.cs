@@ -4,6 +4,7 @@ using log4net.Appender;
 using log4net.Core;
 using log4net.Layout;
 using log4net.Repository.Hierarchy;
+using Shared.Contracts;
 
 namespace Shared.Loggers
 {
@@ -13,9 +14,9 @@ namespace Shared.Loggers
 
         private static string LogOutputTemplate = "%date{yyyy'-'MM'-'dd HH':'mm':'ss'.'fff} [%thread] %level %logger - %message%newline";
 
-        public static void ConfigureSimpleFileLogger()
+        public static void ConfigureSimpleFileLogger(ThreadingType threadingType)
         {
-            var logFileName = $"{Constants.RootLogsDirectory}\\Log4Net.SimpleFile.log";
+            var logFileName = $"{Parameters.RootLogsDirectory}\\Log4Net.{threadingType}.SimpleFile.log";
 
             File.Delete(logFileName);
 
@@ -38,9 +39,9 @@ namespace Shared.Loggers
             Hierarchy.Configured = true;
         }
 
-        public static void ConfigureRollingSizeFileLogger()
+        public static void ConfigureRollingSizeFileLogger(ThreadingType threadingType)
         {
-            var logFileName = $"{Constants.RootLogsDirectory}\\Log4Net.RollingSizeFile.log";
+            var logFileName = $"{Parameters.RootLogsDirectory}\\Log4Net.{threadingType}.RollingSizeFile.log";
 
             File.Delete(logFileName);
 
@@ -55,8 +56,8 @@ namespace Shared.Loggers
                 File = logFileName,
                 Layout = patternLayout,
 
-                MaxSizeRollBackups = Constants.MaxArchiveFiles,
-                MaximumFileSize = Constants.Log4NetArchiveAboveString,
+                MaxSizeRollBackups = Parameters.MaxArchiveFiles,
+                MaximumFileSize = Parameters.Log4NetArchiveAboveString,
                 RollingStyle = RollingFileAppender.RollingMode.Size,
                 StaticLogFileName = true
             };

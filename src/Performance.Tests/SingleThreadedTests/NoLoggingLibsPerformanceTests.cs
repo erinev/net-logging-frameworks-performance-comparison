@@ -8,7 +8,6 @@ namespace Performance.Tests.SingleThreadedTests
     [TestFixture]
     public class NoLoggingLibsPerformanceTests
     {
-        [Explicit]
         [Test]
         public void NoLoggingLib_SingleThread_InMemoryForeach_Test()
         {
@@ -20,7 +19,7 @@ namespace Performance.Tests.SingleThreadedTests
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.NoLoggingLib,
                 LogFileType.InMemoryForeach,
-                (runNr, logNr) => { });
+                (runNr, logNr) => {  });
 
             #endregion
 
@@ -28,6 +27,27 @@ namespace Performance.Tests.SingleThreadedTests
             Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------");
             Console.WriteLine();
             Console.WriteLine($"'No logs -> single thread' test FINISHED: {DateTime.Now}");
+        }
+
+        [Test]
+        public void NoLoggingLib_MultiThread_InMemoryForeach_Test()
+        {
+            Console.WriteLine($"'No logs -> multi thread' test STARTED: {DateTime.Now}");
+
+
+            #region No Logging
+
+            MultiThreadTestsCaseRunner.Run(
+                LoggingLib.NoLoggingLib,
+                LogFileType.InMemoryForeach,
+                (runNr, logNr) => {  });
+
+            #endregion
+
+            
+            Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine($"'No logs -> multi thread' test FINISHED: {DateTime.Now}");
         }
     }
 }

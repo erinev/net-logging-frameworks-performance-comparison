@@ -1,16 +1,17 @@
 ﻿using System.IO;
 using Serilog;
 using Serilog.Core;
+using Shared.Contracts;
 
 namespace Shared.Loggers
 {
     public class SerilogLogger
     {
-        private static readonly string LogOutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [ThreadId: {ThreadId}] {Level:u3} {LoggerName} - {Message}{NewLine}";
+        private static readonly string LogOutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{ThreadId}] {Level:u3} {LoggerName} - {Message}{NewLine}";
 
-        public static Logger ConfigureSimpleFileLogger()
+        public static Logger ConfigureSimpleFileLogger(ThreadingType threadingType)
         {
-            var logFileName = $"{Constants.RootLogsDirectory}\\Serilog.SimpleFile.log";
+            var logFileName = $"{Parameters.RootLogsDirectory}\\Serilog.{threadingType}.SimpleFile.log";
 
             File.Delete(logFileName);
 
@@ -26,9 +27,9 @@ namespace Shared.Loggers
             return logger;
         }
 
-        public static Logger ConfigureRollingSizeFileLogger()
+        public static Logger ConfigureRollingSizeFileLogger(ThreadingType threadingType)
         {
-            var logFileName = $"{Constants.RootLogsDirectory}\\Serilog.RollingSizeFile.log";
+            var logFileName = $"{Parameters.RootLogsDirectory}\\Serilog.{threadingType}.RollingSizeFile.log";
 
             File.Delete(logFileName);
 
@@ -38,8 +39,8 @@ namespace Shared.Loggers
                     outputTemplate: LogOutputTemplate,
 
                     rollOnFileSizeLimit: true,
-                    fileSizeLimitBytes: Constants.ArchiveAboveBytes,
-                    retainedFileCountLimit: Constants.MaxArchiveFiles)
+                    fileSizeLimitBytes: Parameters.ArchiveAboveBytes,
+                    retainedFileCountLimit: Parameters.MaxArchiveFiles)
                 .Enrich.WithThreadId()
                 .Enrich.WithProperty("LoggerName", "PerformanceTests")
                 .MinimumLevel.Information()
