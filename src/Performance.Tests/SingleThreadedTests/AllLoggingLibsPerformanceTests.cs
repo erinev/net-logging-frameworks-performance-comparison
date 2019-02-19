@@ -15,6 +15,11 @@ namespace Performance.Tests.SingleThreadedTests
         private static readonly ILog Log4NetLog = log4net.LogManager.GetLogger("PerformanceTests");
         private static readonly Logger NLogLog = NLog.LogManager.GetLogger("PerformanceTests");
 
+        private static void SleepBeforeNextTestCaseRun()
+        {
+            Thread.Sleep(Parameters.SleepForMsBeforeNextTestCaseRunForCpuCalmDown);
+        }
+
         #region Single threaded
 
         [Test]
@@ -34,7 +39,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region NLog
 
@@ -46,7 +51,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region Serilog
 
@@ -81,7 +86,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region NLog
 
@@ -93,7 +98,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region Serilog
 
@@ -130,7 +135,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region NLog
 
@@ -142,7 +147,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region Serilog
 
@@ -177,7 +182,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region NLog
 
@@ -189,7 +194,7 @@ namespace Performance.Tests.SingleThreadedTests
 
             #endregion
 
-            Thread.Sleep(30*1000);
+            SleepBeforeNextTestCaseRun();
 
             #region Serilog
 

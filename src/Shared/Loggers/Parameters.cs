@@ -11,5 +11,7 @@
 
         public static int NumberOfRuns = 20;
         public static int NumberOfLogsPerRun = 50000;
+
+        public static int SleepForMsBeforeNextTestCaseRunForCpuCalmDown = 10 * 1000;
     }
 }
