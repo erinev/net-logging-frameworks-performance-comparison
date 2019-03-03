@@ -12,7 +12,7 @@
         public static int MaxArchiveFiles = 5;
 
         public static int NumberOfRuns = 20;
-        public static int NumberOfLogsPerParallelRun = 250000;
+        public static int NumberOfLogsPerParallelRun = 100000;
         public static int NumberOfLogsPerSyncRun = 100000;
 
         public static int SleepForMsBeforeNextParallelRun = 15 * 1000;

@@ -1,0 +1,155 @@
+'SingleThreaded -> SimpleFile' test STARTED: 2019-03-03 17:37:52
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Log4Net -> SingleThreaded -> SimpleFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #01 completed in: 1066 ms
+Run #02 completed in: 1045 ms
+Run #03 completed in: 1073 ms
+Run #04 completed in: 1053 ms
+Run #05 completed in: 1093 ms
+Run #06 completed in: 1102 ms
+Run #07 completed in: 1044 ms
+Run #08 completed in: 1046 ms
+Run #09 completed in: 1070 ms
+Run #10 completed in: 1084 ms
+Run #11 completed in: 1262 ms
+Run #12 completed in: 1124 ms
+Run #13 completed in: 1053 ms
+Run #14 completed in: 1046 ms
+Run #15 completed in: 1111 ms
+Run #16 completed in: 1041 ms
+Run #17 completed in: 1046 ms
+Run #18 completed in: 1043 ms
+Run #19 completed in: 1040 ms
+Run #20 completed in: 1044 ms
+'Log4Net -> SingleThreaded -> SimpleFile' case FINISHED. Total logs written: '2000000', whole test case run time: 21488 ms, sum of all single runs time: 21486 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'NLog -> SingleThreaded -> SimpleFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #01 completed in: 1112 ms
+Run #02 completed in: 1038 ms
+Run #03 completed in: 1021 ms
+Run #04 completed in: 1077 ms
+Run #05 completed in: 1010 ms
+Run #06 completed in: 1054 ms
+Run #07 completed in: 1022 ms
+Run #08 completed in: 1069 ms
+Run #09 completed in: 1039 ms
+Run #10 completed in: 1018 ms
+Run #11 completed in: 1046 ms
+Run #12 completed in: 1034 ms
+Run #13 completed in: 1099 ms
+Run #14 completed in: 1014 ms
+Run #15 completed in: 1023 ms
+Run #16 completed in: 1041 ms
+Run #17 completed in: 1024 ms
+Run #18 completed in: 1017 ms
+Run #19 completed in: 1012 ms
+Run #20 completed in: 1055 ms
+'NLog -> SingleThreaded -> SimpleFile' case FINISHED. Total logs written: '2000000', whole test case run time: 20824 ms, sum of all single runs time: 20825 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Serilog -> SingleThreaded -> SimpleFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #01 completed in: 1402 ms
+Run #02 completed in: 1380 ms
+Run #03 completed in: 1417 ms
+Run #04 completed in: 1386 ms
+Run #05 completed in: 1406 ms
+Run #06 completed in: 1383 ms
+Run #07 completed in: 1391 ms
+Run #08 completed in: 1374 ms
+Run #09 completed in: 1384 ms
+Run #10 completed in: 1401 ms
+Run #11 completed in: 1376 ms
+Run #12 completed in: 1383 ms
+Run #13 completed in: 1430 ms
+Run #14 completed in: 1383 ms
+Run #15 completed in: 1380 ms
+Run #16 completed in: 1386 ms
+Run #17 completed in: 1377 ms
+Run #18 completed in: 1378 ms
+Run #19 completed in: 1394 ms
+Run #20 completed in: 1443 ms
+'Serilog -> SingleThreaded -> SimpleFile' case FINISHED. Total logs written: '2000000', whole test case run time: 27855 ms, sum of all single runs time: 27854 ms
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+'SingleThreaded -> SimpleFile' test FINISHED: 2019-03-03 17:39:09
+
+/////////////////////////////////////
+
+'MultiThreaded -> SimpleFile' test STARTED: 2019-03-03 17:29:11
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Log4Net -> MultiThreaded -> SimpleFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #03 completed in: 13301 ms
+Run #01 completed in: 13333 ms
+Run #11 completed in: 13389 ms
+Run #05 completed in: 13397 ms
+Run #07 completed in: 13638 ms
+Run #09 completed in: 13738 ms
+Run #13 completed in: 13814 ms
+Run #15 completed in: 15352 ms
+Run #04 completed in: 15337 ms
+Run #12 completed in: 15481 ms
+Run #17 completed in: 15772 ms
+Run #06 completed in: 15758 ms
+Run #08 completed in: 15656 ms
+Run #14 completed in: 15678 ms
+Run #10 completed in: 15772 ms
+Run #02 completed in: 19606 ms
+Run #16 completed in: 9136 ms
+Run #18 completed in: 5145 ms
+Run #19 completed in: 4943 ms
+Run #20 completed in: 1172 ms
+'Log4Net -> MultiThreaded -> SimpleFile' case FINISHED. Total logs written: '2000000', whole test case run time: 34989 ms, sum of all parallel runs time: 259418 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'NLog -> MultiThreaded -> SimpleFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #13 completed in: 15493 ms
+Run #11 completed in: 15581 ms
+Run #15 completed in: 16115 ms
+Run #07 completed in: 16156 ms
+Run #03 completed in: 16268 ms
+Run #01 completed in: 16279 ms
+Run #05 completed in: 16354 ms
+Run #17 completed in: 16444 ms
+Run #09 completed in: 16579 ms
+Run #19 completed in: 17249 ms
+Run #14 completed in: 16850 ms
+Run #12 completed in: 17365 ms
+Run #16 completed in: 16932 ms
+Run #06 completed in: 17170 ms
+Run #02 completed in: 17215 ms
+Run #18 completed in: 17106 ms
+Run #10 completed in: 17213 ms
+Run #08 completed in: 17435 ms
+Run #20 completed in: 17074 ms
+Run #04 completed in: 18024 ms
+'NLog -> MultiThreaded -> SimpleFile' case FINISHED. Total logs written: '2000000', whole test case run time: 34292 ms, sum of all parallel runs time: 334902 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Serilog -> MultiThreaded -> SimpleFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #03 completed in: 21014 ms
+Run #19 completed in: 21019 ms
+Run #13 completed in: 21558 ms
+Run #07 completed in: 21858 ms
+Run #17 completed in: 22227 ms
+Run #09 completed in: 22415 ms
+Run #11 completed in: 22454 ms
+Run #15 completed in: 22791 ms
+Run #01 completed in: 22899 ms
+Run #05 completed in: 23530 ms
+Run #02 completed in: 25339 ms
+Run #10 completed in: 22526 ms
+Run #18 completed in: 22715 ms
+Run #12 completed in: 22800 ms
+Run #04 completed in: 24254 ms
+Run #16 completed in: 22483 ms
+Run #20 completed in: 24684 ms
+Run #14 completed in: 24232 ms
+Run #06 completed in: 23984 ms
+Run #08 completed in: 24028 ms
+'Serilog -> MultiThreaded -> SimpleFile' case FINISHED. Total logs written: '2000000', whole test case run time: 45886 ms, sum of all parallel runs time: 458810 ms
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+'MultiThreaded -> SimpleFile' test FINISHED: 2019-03-03 17:31:37

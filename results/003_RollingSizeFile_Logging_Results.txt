@@ -1,0 +1,155 @@
+'SingleThreaded -> RollingSizeFile' test STARTED: 2019-03-03 17:40:07
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Log4Net -> SingleThreaded -> RollingSizeFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #01 completed in: 1362 ms
+Run #02 completed in: 1501 ms
+Run #03 completed in: 1402 ms
+Run #04 completed in: 1361 ms
+Run #05 completed in: 1362 ms
+Run #06 completed in: 1413 ms
+Run #07 completed in: 1362 ms
+Run #08 completed in: 1378 ms
+Run #09 completed in: 1463 ms
+Run #10 completed in: 1383 ms
+Run #11 completed in: 1423 ms
+Run #12 completed in: 1323 ms
+Run #13 completed in: 1334 ms
+Run #14 completed in: 1335 ms
+Run #15 completed in: 1339 ms
+Run #16 completed in: 1347 ms
+Run #17 completed in: 1354 ms
+Run #18 completed in: 1332 ms
+Run #19 completed in: 1327 ms
+Run #20 completed in: 1329 ms
+'Log4Net -> SingleThreaded -> RollingSizeFile' case FINISHED. Total logs written: '2000000', whole test case run time: 27428 ms, sum of all single runs time: 27430 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'NLog -> SingleThreaded -> RollingSizeFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #01 completed in: 2213 ms
+Run #02 completed in: 2144 ms
+Run #03 completed in: 2113 ms
+Run #04 completed in: 2098 ms
+Run #05 completed in: 2154 ms
+Run #06 completed in: 2106 ms
+Run #07 completed in: 2277 ms
+Run #08 completed in: 2148 ms
+Run #09 completed in: 2163 ms
+Run #10 completed in: 2215 ms
+Run #11 completed in: 2129 ms
+Run #12 completed in: 2101 ms
+Run #13 completed in: 2115 ms
+Run #14 completed in: 2113 ms
+Run #15 completed in: 2152 ms
+Run #16 completed in: 2121 ms
+Run #17 completed in: 2160 ms
+Run #18 completed in: 2110 ms
+Run #19 completed in: 2147 ms
+Run #20 completed in: 2110 ms
+'NLog -> SingleThreaded -> RollingSizeFile' case FINISHED. Total logs written: '2000000', whole test case run time: 42889 ms, sum of all single runs time: 42889 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Serilog -> SingleThreaded -> RollingSizeFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #01 completed in: 1568 ms
+Run #02 completed in: 1484 ms
+Run #03 completed in: 1492 ms
+Run #04 completed in: 1480 ms
+Run #05 completed in: 1482 ms
+Run #06 completed in: 1474 ms
+Run #07 completed in: 1466 ms
+Run #08 completed in: 1478 ms
+Run #09 completed in: 1543 ms
+Run #10 completed in: 1487 ms
+Run #11 completed in: 1514 ms
+Run #12 completed in: 1483 ms
+Run #13 completed in: 1483 ms
+Run #14 completed in: 1494 ms
+Run #15 completed in: 1498 ms
+Run #16 completed in: 1593 ms
+Run #17 completed in: 1482 ms
+Run #18 completed in: 1607 ms
+Run #19 completed in: 1538 ms
+Run #20 completed in: 1487 ms
+'Serilog -> SingleThreaded -> RollingSizeFile' case FINISHED. Total logs written: '2000000', whole test case run time: 30133 ms, sum of all single runs time: 30133 ms
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+'SingleThreaded -> RollingSizeFile' test FINISHED: 2019-03-03 17:41:53
+
+/////////////////////////////////////
+
+'MultiThreaded -> RollingSizeFile' test STARTED: 2019-03-03 17:32:22
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Log4Net -> MultiThreaded -> RollingSizeFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #05 completed in: 16289 ms
+Run #13 completed in: 16296 ms
+Run #11 completed in: 16606 ms
+Run #03 completed in: 17071 ms
+Run #07 completed in: 17294 ms
+Run #09 completed in: 17468 ms
+Run #15 completed in: 17497 ms
+Run #01 completed in: 27028 ms
+Run #06 completed in: 19853 ms
+Run #12 completed in: 19648 ms
+Run #14 completed in: 20230 ms
+Run #04 completed in: 20907 ms
+Run #08 completed in: 21111 ms
+Run #16 completed in: 21095 ms
+Run #10 completed in: 21180 ms
+Run #19 completed in: 15958 ms
+Run #17 completed in: 16449 ms
+Run #18 completed in: 8847 ms
+Run #20 completed in: 8767 ms
+Run #02 completed in: 18038 ms
+'Log4Net -> MultiThreaded -> RollingSizeFile' case FINISHED. Total logs written: '2000000', whole test case run time: 45069 ms, sum of all parallel runs time: 357632 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'NLog -> MultiThreaded -> RollingSizeFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #09 completed in: 30932 ms
+Run #07 completed in: 31072 ms
+Run #01 completed in: 31236 ms
+Run #05 completed in: 31444 ms
+Run #13 completed in: 31479 ms
+Run #03 completed in: 31972 ms
+Run #11 completed in: 32464 ms
+Run #15 completed in: 33300 ms
+Run #17 completed in: 37629 ms
+Run #19 completed in: 40754 ms
+Run #08 completed in: 40132 ms
+Run #14 completed in: 39762 ms
+Run #12 completed in: 39876 ms
+Run #10 completed in: 40920 ms
+Run #04 completed in: 40310 ms
+Run #02 completed in: 41086 ms
+Run #06 completed in: 40953 ms
+Run #16 completed in: 39968 ms
+Run #18 completed in: 39179 ms
+Run #20 completed in: 27684 ms
+'NLog -> MultiThreaded -> RollingSizeFile' case FINISHED. Total logs written: '2000000', whole test case run time: 73204 ms, sum of all parallel runs time: 722152 ms
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'Serilog -> MultiThreaded -> RollingSizeFile' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #07 completed in: 28636 ms
+Run #19 completed in: 28781 ms
+Run #11 completed in: 29251 ms
+Run #13 completed in: 30001 ms
+Run #15 completed in: 30174 ms
+Run #02 completed in: 30940 ms
+Run #04 completed in: 31431 ms
+Run #03 completed in: 31736 ms
+Run #09 completed in: 31783 ms
+Run #01 completed in: 31794 ms
+Run #05 completed in: 31886 ms
+Run #17 completed in: 32023 ms
+Run #06 completed in: 26535 ms
+Run #08 completed in: 19532 ms
+Run #20 completed in: 19554 ms
+Run #12 completed in: 19327 ms
+Run #16 completed in: 18676 ms
+Run #14 completed in: 18852 ms
+Run #10 completed in: 17939 ms
+Run #18 completed in: 17499 ms
+'Serilog -> MultiThreaded -> RollingSizeFile' case FINISHED. Total logs written: '2000000', whole test case run time: 48932 ms, sum of all parallel runs time: 526350 ms
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+'MultiThreaded -> RollingSizeFile' test FINISHED: 2019-03-03 17:35:40
