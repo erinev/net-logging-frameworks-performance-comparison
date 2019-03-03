@@ -1,0 +1,23 @@
+Testing environment info (OS / HW):
+---
+OS:
+Name: WINDOWS 10
+Full version string: Microsoft Windows NT 10.0.17763.0
+---
+CPU:
+Processor name: Intel(R) Core(TM) i7-3630QM CPU @ 2.40GHz
+Maximum CPU frequency: 2,401 GHz
+Processors count: 1
+Cores count: 4
+Logical processors count: 8
+---
+RAM:
+Total RAM: 11,89 GB
+---
+DISK:
+Model: Samsung SSD 840 PRO Series
+Drive letter: C:\
+File system: NTFS
+Total size: 214 GB
+Free space: 31 GB
+---

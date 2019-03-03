@@ -14,7 +14,7 @@ namespace Shared.TestCaseRunners
         public static void Run(LoggingLib lib, LogFileType logFileType, Action<long, int> logAction)
         {
             int numberOfRuns = Parameters.NumberOfRuns + 1;
-            int logsCountPerRun = Parameters.NumberOfLogsPerRun;
+            int logsCountPerRun = Parameters.NumberOfLogsPerParallelRun;
 
             string testCaseName = $"{lib} -> {ThreadingType.MultiThreaded} -> {logFileType}";
 
@@ -55,6 +55,23 @@ namespace Shared.TestCaseRunners
             int totalNumberOfLogsWritten = lib == LoggingLib.NoLoggingLib ? 0 : (numberOfRuns - 1) * logsCountPerRun;
 
             Console.WriteLine($"'{testCaseName}' case FINISHED. Total logs written: '{totalNumberOfLogsWritten}', whole test case run time: {testCaseStopWatch.Elapsed.Milliseconds} ms, sum of all parallel runs time: {sumOfAllRunsElapsedMs} ms");
+        }
+
+        public static void ReportStartedTest(ThreadingType threadingType, LogFileType logFileType)
+        {
+            Console.WriteLine($"'{threadingType} -> {logFileType}' test STARTED: {DateTime.Now}");
+        }
+
+        public static void ReportTestResults(ThreadingType threadingType, LogFileType logFileType)
+        {
+            Console.WriteLine("-------------------------------------------------------------------------------------------------------------------------------------------------");
+            Console.WriteLine();
+            Console.WriteLine($"'{threadingType} -> {logFileType}' test FINISHED: {DateTime.Now}");
+
+            if (Parameters.OutputEnvironmentInfoAfterRun)
+            {
+                EnvironmentInfoUtil.OutputEnvironmentInfo();
+            }
         }
     }
 }

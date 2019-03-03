@@ -1,0 +1,61 @@
+#1:
+'SingleThreaded -> InMemoryForeach' test STARTED: 2019-03-03 13:43:16
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'NoLoggingLib -> SingleThreaded -> InMemoryForeach' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #01 completed in: 0 ms
+Run #02 completed in: 0 ms
+Run #03 completed in: 0 ms
+Run #04 completed in: 0 ms
+Run #05 completed in: 0 ms
+Run #06 completed in: 0 ms
+Run #07 completed in: 0 ms
+Run #08 completed in: 0 ms
+Run #09 completed in: 0 ms
+Run #10 completed in: 0 ms
+Run #11 completed in: 0 ms
+Run #12 completed in: 0 ms
+Run #13 completed in: 0 ms
+Run #14 completed in: 0 ms
+Run #15 completed in: 0 ms
+Run #16 completed in: 0 ms
+Run #17 completed in: 0 ms
+Run #18 completed in: 0 ms
+Run #19 completed in: 0 ms
+Run #20 completed in: 0 ms
+'NoLoggingLib -> SingleThreaded -> InMemoryForeach' case FINISHED. Total logs written: '0', whole test case  run time: 10 ms, sum of all parallel runs time: 0 ms
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+'SingleThreaded -> InMemoryForeach' test FINISHED: 2019-03-03 13:43:16
+
+--
+
+#2:
+'MultiThreaded -> InMemoryForeach' test STARTED: 2019-03-03 13:43:12
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+'NoLoggingLib -> MultiThreaded -> InMemoryForeach' case STARTED. Number of runs: '20', logs per run: '100000'
+Run #13 completed in: 1 ms
+Run #05 completed in: 1 ms
+Run #11 completed in: 1 ms
+Run #09 completed in: 1 ms
+Run #07 completed in: 1 ms
+Run #15 completed in: 2 ms
+Run #03 completed in: 1 ms
+Run #14 completed in: 1 ms
+Run #06 completed in: 1 ms
+Run #12 completed in: 1 ms
+Run #10 completed in: 1 ms
+Run #08 completed in: 1 ms
+Run #16 completed in: 0 ms
+Run #04 completed in: 1 ms
+Run #17 completed in: 1 ms
+Run #02 completed in: 1 ms
+Run #01 completed in: 4 ms
+Run #19 completed in: 1 ms
+Run #18 completed in: 0 ms
+Run #20 completed in: 0 ms
+'NoLoggingLib -> MultiThreaded -> InMemoryForeach' case FINISHED. Total logs written: '0', whole test case run time: 9 ms, sum of all parallel runs time: 21 ms
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+'MultiThreaded -> InMemoryForeach' test FINISHED: 2019-03-03 13:43:12

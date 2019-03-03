@@ -3,6 +3,8 @@
     public enum ThreadingType
     {
         SingleThreaded,
-        MultiThreaded
+        MultiThreaded,
+        OptimizedSingleThreaded,
+        OptimizedMultiThreaded
     }
 }

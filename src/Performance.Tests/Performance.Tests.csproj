@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SingleThreadedTests\AllLoggingLibsPerformanceTests.cs" />
-    <Compile Include="SingleThreadedTests\NoLoggingLibsPerformanceTests.cs" />
+    <Compile Include="SingleThreadedPerformanceTests.cs" />
+    <Compile Include="MultiThreadedPerformanceTests.cs" />
+    <Compile Include="NoLoggingLibsPerformanceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -62,8 +63,6 @@
       <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MultiThreadedTests\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

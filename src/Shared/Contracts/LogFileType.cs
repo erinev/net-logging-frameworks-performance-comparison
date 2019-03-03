@@ -4,6 +4,8 @@
     {
         InMemoryForeach,
         SimpleFile,
-        RollingSizeFile
+        RollingSizeFile,
+        OptimizedSimpleFile,
+        OptimizedRollingSizeFile
     }
 }
