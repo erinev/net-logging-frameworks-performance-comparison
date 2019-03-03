@@ -7,7 +7,7 @@ namespace Shared.Loggers
 {
     public class SerilogLogger
     {
-        private static readonly string LogOutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{ThreadId}] {Level:u3} {LoggerName} - {Message}{NewLine}";
+        private static readonly string LogOutputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff} [{ThreadId}] {Level:u4} {LoggerName} - {Message}{NewLine}";
 
         public static Logger ConfigureSimpleFileLogger(ThreadingType threadingType)
         {

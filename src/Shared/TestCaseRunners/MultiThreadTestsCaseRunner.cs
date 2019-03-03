@@ -9,6 +9,7 @@ namespace Shared.TestCaseRunners
 {
     public class MultiThreadTestsCaseRunner
     {
+        private static readonly Stopwatch TestCaseStopWatch = new Stopwatch();
         static readonly ThreadLocal<Stopwatch> LocalSingleRunStopwatch = new ThreadLocal<Stopwatch>(() => new Stopwatch());
 
         public static void Run(LoggingLib lib, LogFileType logFileType, Action<long, int> logAction)
@@ -24,7 +25,8 @@ namespace Shared.TestCaseRunners
 
             long sumOfAllRunsElapsedMs = 0;
 
-            var testCaseStopWatch = Stopwatch.StartNew();
+            TestCaseStopWatch.Reset();
+            TestCaseStopWatch.Start();
 
             Parallel.For((long) 1, numberOfRuns, index => 
             { 
@@ -45,16 +47,18 @@ namespace Shared.TestCaseRunners
 
                 string runNumber = index < 10 ? $"0{index}" : index.ToString();
 
-                Console.WriteLine($"Run #{runNumber} completed in: {LocalSingleRunStopwatch.Value.Elapsed.Milliseconds} ms");
+                int singleRunTimeInMs = Convert.ToInt32(LocalSingleRunStopwatch.Value.Elapsed.TotalMilliseconds);
+                Console.WriteLine($"Run #{runNumber} completed in: {singleRunTimeInMs} ms");
                     
-                Interlocked.Add(ref sumOfAllRunsElapsedMs, LocalSingleRunStopwatch.Value.Elapsed.Milliseconds);
+                Interlocked.Add(ref sumOfAllRunsElapsedMs, singleRunTimeInMs);
             });
 
-            testCaseStopWatch.Stop();
+            TestCaseStopWatch.Stop();
 
             int totalNumberOfLogsWritten = lib == LoggingLib.NoLoggingLib ? 0 : (numberOfRuns - 1) * logsCountPerRun;
 
-            Console.WriteLine($"'{testCaseName}' case FINISHED. Total logs written: '{totalNumberOfLogsWritten}', whole test case run time: {testCaseStopWatch.Elapsed.Milliseconds} ms, sum of all parallel runs time: {sumOfAllRunsElapsedMs} ms");
+            int totalRunTimeInMs = Convert.ToInt32(TestCaseStopWatch.Elapsed.TotalMilliseconds);
+            Console.WriteLine($"'{testCaseName}' case FINISHED. Total logs written: '{totalNumberOfLogsWritten}', whole test case run time: {totalRunTimeInMs} ms, sum of all parallel runs time: {sumOfAllRunsElapsedMs} ms");
         }
 
         public static void ReportStartedTest(ThreadingType threadingType, LogFileType logFileType)

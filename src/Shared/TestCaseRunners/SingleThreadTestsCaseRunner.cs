@@ -7,6 +7,7 @@ namespace Shared.TestCaseRunners
 {
     public class SingleThreadTestsCaseRunner
     {
+        private static readonly Stopwatch TestCaseStopWatch = new Stopwatch();
         private static readonly Stopwatch SingleRunStopWatch = new Stopwatch();
 
         public static void Run(LoggingLib lib, LogFileType logFileType, Action<int, int> logAction)
@@ -22,7 +23,8 @@ namespace Shared.TestCaseRunners
 
             long sumOfAllRunsElapsedMs = 0;
 
-            var testCaseStopWatch = Stopwatch.StartNew();
+            TestCaseStopWatch.Reset();
+            TestCaseStopWatch.Start();
 
             for (int i = 1; i <= numberOfRuns; i++)
             {
@@ -38,15 +40,17 @@ namespace Shared.TestCaseRunners
 
                 string runNumber = i < 10 ? $"0{i}" : i.ToString();
 
-                Console.WriteLine($"Run #{runNumber} completed in: {SingleRunStopWatch.Elapsed.Milliseconds} ms");
-                sumOfAllRunsElapsedMs += SingleRunStopWatch.Elapsed.Milliseconds;
+                int singleRunTimeInMs = Convert.ToInt32(SingleRunStopWatch.Elapsed.TotalMilliseconds);
+                Console.WriteLine($"Run #{runNumber} completed in: {singleRunTimeInMs} ms");
+                sumOfAllRunsElapsedMs += singleRunTimeInMs;
             }
 
-            testCaseStopWatch.Stop();
+            TestCaseStopWatch.Stop();
 
             int totalNumberOfLogsWritten = lib == LoggingLib.NoLoggingLib ? 0 : numberOfRuns * logsCountPerRun;
 
-            Console.WriteLine($"'{testCaseName}' case FINISHED. Total logs written: '{totalNumberOfLogsWritten}', whole test case  run time: {testCaseStopWatch.Elapsed.Milliseconds} ms, sum of all parallel runs time: {sumOfAllRunsElapsedMs} ms");
+            int totalRunTimeInMs = Convert.ToInt32(TestCaseStopWatch.Elapsed.TotalMilliseconds);
+            Console.WriteLine($"'{testCaseName}' case FINISHED. Total logs written: '{totalNumberOfLogsWritten}', whole test case run time: {totalRunTimeInMs} ms, sum of all single runs time: {sumOfAllRunsElapsedMs} ms");
         }
 
         public static void ReportStartedTest(ThreadingType threadingType, LogFileType logFileType)
@@ -60,7 +64,10 @@ namespace Shared.TestCaseRunners
             Console.WriteLine();
             Console.WriteLine($"'{threadingType} -> {logFileType}' test FINISHED: {DateTime.Now}");
 
-            EnvironmentInfoUtil.OutputEnvironmentInfo();
+            if (Parameters.OutputEnvironmentInfoAfterRun)
+            {
+                EnvironmentInfoUtil.OutputEnvironmentInfo();
+            }
         }
     }
 }
