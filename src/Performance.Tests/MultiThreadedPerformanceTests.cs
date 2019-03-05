@@ -2,6 +2,7 @@
 using log4net;
 using NLog;
 using NUnit.Framework;
+using Shared;
 using Shared.Contracts;
 using Shared.Loggers;
 using Shared.TestCaseRunners;

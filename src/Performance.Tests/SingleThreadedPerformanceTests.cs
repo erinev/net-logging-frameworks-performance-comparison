@@ -2,6 +2,7 @@
 using log4net;
 using NLog;
 using NUnit.Framework;
+using Shared;
 using Shared.Contracts;
 using Shared.Loggers;
 using Shared.TestCaseRunners;
@@ -106,6 +107,50 @@ namespace Performance.Tests
             
 
             SingleThreadTestsCaseRunner.ReportTestResults(ThreadingType.SingleThreaded, LogFileType.RollingSizeFile);
+        }
+
+        [Test]
+        public void SingleThread_Optimized_SimpleLogFile_Test()
+        {
+            SingleThreadTestsCaseRunner.ReportStartedTest(ThreadingType.SingleThreaded, LogFileType.OptimizedSimpleFile);
+
+            #region Log4net
+
+            Log4NetLogger.ConfigureOptimizedSimpleFileLogger(ThreadingType.SingleThreaded);
+            SingleThreadTestsCaseRunner.Run(
+                LoggingLib.Log4Net,
+                LogFileType.OptimizedSimpleFile,
+                (runNr, logNr) => Log4NetLog.Info($"Run #{runNr} - Log #{logNr}"));
+            Log4NetLogger.DisableLogger();
+
+            #endregion
+
+            SleepBeforeNextTestCaseRun();
+
+//            #region NLog
+//
+//            NLogLogger.ConfigureSimpleFileLogger(ThreadingType.SingleThreaded);
+//            SingleThreadTestsCaseRunner.Run(
+//                LoggingLib.NLog,  
+//                LogFileType.SimpleFile,
+//                (runNr, logNr) => NLogLog.Info($"Run #{runNr} - Log #{logNr}"));
+//
+//            #endregion
+//
+//            SleepBeforeNextTestCaseRun();
+//
+//            #region Serilog
+//
+//            Serilog.Core.Logger serilogLogger = SerilogLogger.ConfigureSimpleFileLogger(ThreadingType.SingleThreaded);
+//            SingleThreadTestsCaseRunner.Run(
+//                LoggingLib.Serilog,  
+//                LogFileType.SimpleFile,
+//                (runNr, logNr) => serilogLogger.Information($"Run #{runNr} - Log #{logNr}"));
+//
+//            #endregion
+            
+            SingleThreadTestsCaseRunner.ReportTestResults(ThreadingType.SingleThreaded, LogFileType.OptimizedSimpleFile);
+            
         }
     }
 }

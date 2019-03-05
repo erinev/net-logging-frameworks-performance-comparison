@@ -1,9 +1,19 @@
-﻿namespace Shared.Loggers
+﻿namespace Shared
 {
     public class Parameters
     {
-        public static string RootLogsDirectory => 
-            "C:\\Development\\Logging Frameworks POC\\net-logging-frameworks-performance-test\\logs";
+        public static string RootLogsDirectory
+        {
+            get
+            {
+                string rootLogsDirectory = "C:\\Development\\Logging Frameworks POC\\net-logging-frameworks-performance-test\\logs";
+
+                System.IO.FileInfo rootLogsDirectoryInfo = new System.IO.FileInfo(rootLogsDirectory);
+                rootLogsDirectoryInfo.Directory?.Create();
+
+                return rootLogsDirectory;
+            }
+        }
 
         public static bool OutputEnvironmentInfoAfterRun = false;
 

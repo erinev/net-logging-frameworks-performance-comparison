@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using Easy.Logger;
 using log4net;
 using log4net.Appender;
 using log4net.Core;
@@ -63,6 +64,41 @@ namespace Shared.Loggers
             };
             rollingFileAppender.ActivateOptions();
             Hierarchy.Root.AddAppender(rollingFileAppender);
+
+            Hierarchy.Root.Level = Level.Info;
+
+            Hierarchy.Configured = true;
+        }
+
+        public static void ConfigureOptimizedSimpleFileLogger(ThreadingType threadingType)
+        {
+            var logFileName = $"{Parameters.RootLogsDirectory}\\Log4Net.{threadingType}.Optimized.SimpleFile.log";
+
+            File.Delete(logFileName);
+
+            PatternLayout patternLayout = new PatternLayout
+            {
+                ConversionPattern = LogOutputTemplate
+            };
+            patternLayout.ActivateOptions();
+
+            var simpleFileAppender = new FileAppender
+            {
+                File = logFileName,
+                Layout = patternLayout
+            };
+            simpleFileAppender.ActivateOptions();
+
+            var asyncBufferingForwarderAppender = new AsyncBufferingForwardingAppender()
+            {
+                Lossy = false,
+                BufferSize = 512,
+                Fix = FixFlags.ThreadName,
+                IdleTime = 500
+            };
+            asyncBufferingForwarderAppender.AddAppender(simpleFileAppender);
+            asyncBufferingForwarderAppender.ActivateOptions();
+            Hierarchy.Root.AddAppender(asyncBufferingForwarderAppender);
 
             Hierarchy.Root.Level = Level.Info;
 
