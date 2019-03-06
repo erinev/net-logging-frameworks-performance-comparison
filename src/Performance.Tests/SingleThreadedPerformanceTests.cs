@@ -127,16 +127,16 @@ namespace Performance.Tests
 
             SleepBeforeNextTestCaseRun();
 
-//            #region NLog
-//
-//            NLogLogger.ConfigureSimpleFileLogger(ThreadingType.SingleThreaded);
-//            SingleThreadTestsCaseRunner.Run(
-//                LoggingLib.NLog,  
-//                LogFileType.SimpleFile,
-//                (runNr, logNr) => NLogLog.Info($"Run #{runNr} - Log #{logNr}"));
-//
-//            #endregion
-//
+            #region NLog
+
+            NLogLogger.ConfigureOptimizedSimpleFileLogger(ThreadingType.OptimizedSingleThreaded);
+            SingleThreadTestsCaseRunner.Run(
+                LoggingLib.NLog,  
+                LogFileType.OptimizedSimpleFile,
+                (runNr, logNr) => NLogLog.Info($"Run #{runNr} - Log #{logNr}"));
+
+            #endregion
+
 //            SleepBeforeNextTestCaseRun();
 //
 //            #region Serilog

@@ -2,6 +2,7 @@
 using NLog;
 using NLog.Config;
 using NLog.Targets;
+using NLog.Targets.Wrappers;
 using Shared.Contracts;
 
 namespace Shared.Loggers
@@ -54,6 +55,41 @@ namespace Shared.Loggers
             config.AddTarget(rollingSizeLogFileTarget);
 
             config.AddRuleForOneLevel(LogLevel.Info, rollingSizeLogFileTarget); 
+
+            LogManager.Configuration = config;
+        }
+
+        public static void ConfigureOptimizedSimpleFileLogger(ThreadingType threadingType)
+        {
+            var logFileName = $"{Parameters.RootLogsDirectory}\\NLog.{threadingType}.Optimized.SimpleFile.log";
+
+            File.Delete(logFileName);
+
+            var config = new LoggingConfiguration();
+
+            var simpleLogFileTarget = new FileTarget("SimpleLogFileTarget")
+            {
+                FileName = logFileName,
+                Layout = LogOutputTemplate,
+
+                KeepFileOpen = true, // Improves performance drastically (by default is set to false)
+            };
+
+            var asyncTargetWrapper = new AsyncTargetWrapper()
+            {
+                Name = "AsyncTargetWrapper",
+                BatchSize = 50,
+                FullBatchSizeWriteLimit = 1,
+                OptimizeBufferReuse = true,
+                OverflowAction = AsyncTargetWrapperOverflowAction.Grow,
+                QueueLimit = 10000,
+                TimeToSleepBetweenBatches = 0,
+                WrappedTarget = simpleLogFileTarget
+            };
+
+            config.AddTarget(asyncTargetWrapper);
+
+            config.AddRuleForOneLevel(LogLevel.Info, asyncTargetWrapper); 
 
             LogManager.Configuration = config;
         }
