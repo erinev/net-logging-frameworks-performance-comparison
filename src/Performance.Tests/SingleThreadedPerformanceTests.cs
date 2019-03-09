@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System.ComponentModel;
+using System.Threading;
 using log4net;
 using NLog;
 using NUnit.Framework;
@@ -15,7 +16,9 @@ namespace Performance.Tests
         private static readonly ILog Log4NetLog = log4net.LogManager.GetLogger("PerformanceTests");
         private static readonly Logger NLogLog = NLog.LogManager.GetLogger("PerformanceTests");
 
-         private static void SleepBeforeNextTestCaseRun()
+        private static readonly InvalidEnumArgumentException Exception = new InvalidEnumArgumentException("exception");
+
+        private static void SleepBeforeNextTestCaseRun()
         {
             Thread.Sleep(Parameters.SleepForMsBeforeNextSyncRun);
         }
@@ -120,7 +123,7 @@ namespace Performance.Tests
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.Log4Net,
                 LogFileType.OptimizedSimpleFile,
-                (runNr, logNr) => Log4NetLog.Info($"Run #{runNr} - Log #{logNr}"));
+                (runNr, logNr) => Log4NetLog.Error($"Run #{runNr} - Log #{logNr}", Exception));
             Log4NetLogger.DisableLogger();
 
             #endregion
@@ -133,7 +136,7 @@ namespace Performance.Tests
             SingleThreadTestsCaseRunner.Run(
                 LoggingLib.NLog,  
                 LogFileType.OptimizedSimpleFile,
-                (runNr, logNr) => NLogLog.Info($"Run #{runNr} - Log #{logNr}"));
+                (runNr, logNr) => NLogLog.Error(Exception, $"Run #{runNr} - Log #{logNr}"));
 
             #endregion
 

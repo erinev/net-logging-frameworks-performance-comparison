@@ -13,7 +13,7 @@ namespace Shared.Loggers
     {
         private static readonly Hierarchy Hierarchy = (Hierarchy)LogManager.GetRepository();
 
-        private static string LogOutputTemplate = "%date{yyyy'-'MM'-'dd HH':'mm':'ss'.'fff} [%thread] %level %logger - %message%newline";
+        private static string LogOutputTemplate = "%date{yyyy'-'MM'-'dd HH':'mm':'ss'.'fff} [%thread] %level %logger - %message %newline %exception";
 
         public static void ConfigureSimpleFileLogger(ThreadingType threadingType)
         {
@@ -93,7 +93,7 @@ namespace Shared.Loggers
             {
                 Lossy = false,
                 BufferSize = 512,
-                Fix = FixFlags.ThreadName,
+                Fix = FixFlags.ThreadName | FixFlags.Message | FixFlags.Exception,
                 IdleTime = 500
             };
             asyncBufferingForwarderAppender.AddAppender(simpleFileAppender);

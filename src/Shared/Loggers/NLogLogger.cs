@@ -9,7 +9,7 @@ namespace Shared.Loggers
 {
     public class NLogLogger
     {
-        private static readonly string LogOutputTemplate = "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff} [${threadid}] ${level:uppercase=true} ${logger} - ${message}";
+        private static readonly string LogOutputTemplate = "${date:format=yyyy-MM-dd HH\\:mm\\:ss.fff} [${threadid}] ${level:uppercase=true} ${logger} - ${message} ${newline} ${exception:format=tostring}";
 
         public static void ConfigureSimpleFileLogger(ThreadingType threadingType)
         {
@@ -54,7 +54,7 @@ namespace Shared.Loggers
             };
             config.AddTarget(rollingSizeLogFileTarget);
 
-            config.AddRuleForOneLevel(LogLevel.Info, rollingSizeLogFileTarget); 
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, rollingSizeLogFileTarget); 
 
             LogManager.Configuration = config;
         }
@@ -89,7 +89,7 @@ namespace Shared.Loggers
 
             config.AddTarget(asyncTargetWrapper);
 
-            config.AddRuleForOneLevel(LogLevel.Info, asyncTargetWrapper); 
+            config.AddRule(LogLevel.Info, LogLevel.Fatal, asyncTargetWrapper); 
 
             LogManager.Configuration = config;
         }
